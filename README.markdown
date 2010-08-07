@@ -51,4 +51,4 @@ And the DDSocialLoginDialogDelegate will call -socialDialogDidSucceed: when user
 
 ## License
 
-DDSocialDialog is licensed under MIT license.
+DDSocialDialog is licensed under MIT and Apache 2.0 licenses.
