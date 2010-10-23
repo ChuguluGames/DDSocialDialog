@@ -54,7 +54,6 @@ typedef enum{
 @private	
 	DDSocialDialogTheme theme_;
 
-	UIImageView *iconView_;
 	UIButton *closeButton_;
 	UILabel *titleLabel_;
 	UIView *contentView_;

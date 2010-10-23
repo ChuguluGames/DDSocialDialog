@@ -17,17 +17,9 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		7714EEC011C3EEB00091E1C8 /* DDSocialDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7714EEB711C3EEB00091E1C8 /* DDSocialDialog.m */; };
 		7714EEC111C3EEB00091E1C8 /* DDSocialLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7714EEB911C3EEB00091E1C8 /* DDSocialLoginDialog.m */; };
-		7714EEC211C3EEB00091E1C8 /* plurk.png in Resources */ = {isa = PBXBuildFile; fileRef = 7714EEBA11C3EEB00091E1C8 /* plurk.png */; };
-		7714EEC311C3EEB00091E1C8 /* plurk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7714EEBB11C3EEB00091E1C8 /* plurk@2x.png */; };
-		7714EEC411C3EEB00091E1C8 /* plurkClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 7714EEBC11C3EEB00091E1C8 /* plurkClose.png */; };
-		7714EEC511C3EEB00091E1C8 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7714EEBD11C3EEB00091E1C8 /* twitter.png */; };
-		7714EEC611C3EEB00091E1C8 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7714EEBE11C3EEB00091E1C8 /* twitter@2x.png */; };
-		7714EEC711C3EEB00091E1C8 /* twitterClose.png in Resources */ = {isa = PBXBuildFile; fileRef = 7714EEBF11C3EEB00091E1C8 /* twitterClose.png */; };
 		7714EF1611C3F2BF0091E1C8 /* iPhoneDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7714EF1411C3F2BF0091E1C8 /* iPhoneDemoViewController.m */; };
 		7714EF1711C3F2BF0091E1C8 /* iPhoneDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7714EF1511C3F2BF0091E1C8 /* iPhoneDemoViewController.xib */; };
 		772B1B6611C42F2200C4C41F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 772B1B6411C42F2200C4C41F /* Icon.png */; };
-		772B1BA411C4349B00C4C41F /* twitterClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 772B1BA311C4349B00C4C41F /* twitterClose@2x.png */; };
-		772B1BA611C434A300C4C41F /* plurkClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 772B1BA511C434A300C4C41F /* plurkClose@2x.png */; };
 		772B1BAB11C4369500C4C41F /* iPadDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772B1BA911C4369500C4C41F /* iPadDemoViewController.m */; };
 		772B1BAC11C4369500C4C41F /* iPadDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772B1BAA11C4369500C4C41F /* iPadDemoViewController.xib */; };
 /* End PBXBuildFile section */
@@ -49,18 +41,10 @@
 		7714EEB711C3EEB00091E1C8 /* DDSocialDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDSocialDialog.m; path = ../DDSocialDialog.m; sourceTree = SOURCE_ROOT; };
 		7714EEB811C3EEB00091E1C8 /* DDSocialLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDSocialLoginDialog.h; path = ../DDSocialLoginDialog.h; sourceTree = SOURCE_ROOT; };
 		7714EEB911C3EEB00091E1C8 /* DDSocialLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDSocialLoginDialog.m; path = ../DDSocialLoginDialog.m; sourceTree = SOURCE_ROOT; };
-		7714EEBA11C3EEB00091E1C8 /* plurk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plurk.png; path = ../plurk.png; sourceTree = SOURCE_ROOT; };
-		7714EEBB11C3EEB00091E1C8 /* plurk@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plurk@2x.png"; path = "../plurk@2x.png"; sourceTree = SOURCE_ROOT; };
-		7714EEBC11C3EEB00091E1C8 /* plurkClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = plurkClose.png; path = ../plurkClose.png; sourceTree = SOURCE_ROOT; };
-		7714EEBD11C3EEB00091E1C8 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = ../twitter.png; sourceTree = SOURCE_ROOT; };
-		7714EEBE11C3EEB00091E1C8 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter@2x.png"; path = "../twitter@2x.png"; sourceTree = SOURCE_ROOT; };
-		7714EEBF11C3EEB00091E1C8 /* twitterClose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitterClose.png; path = ../twitterClose.png; sourceTree = SOURCE_ROOT; };
 		7714EF1311C3F2BF0091E1C8 /* iPhoneDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneDemoViewController.h; sourceTree = "<group>"; };
 		7714EF1411C3F2BF0091E1C8 /* iPhoneDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneDemoViewController.m; sourceTree = "<group>"; };
 		7714EF1511C3F2BF0091E1C8 /* iPhoneDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iPhoneDemoViewController.xib; sourceTree = "<group>"; };
 		772B1B6411C42F2200C4C41F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		772B1BA311C4349B00C4C41F /* twitterClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitterClose@2x.png"; path = "../twitterClose@2x.png"; sourceTree = SOURCE_ROOT; };
-		772B1BA511C434A300C4C41F /* plurkClose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plurkClose@2x.png"; path = "../plurkClose@2x.png"; sourceTree = SOURCE_ROOT; };
 		772B1BA811C4369500C4C41F /* iPadDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadDemoViewController.h; sourceTree = "<group>"; };
 		772B1BA911C4369500C4C41F /* iPadDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadDemoViewController.m; sourceTree = "<group>"; };
 		772B1BAA11C4369500C4C41F /* iPadDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iPadDemoViewController.xib; sourceTree = "<group>"; };
@@ -131,14 +115,6 @@
 				7714EEB711C3EEB00091E1C8 /* DDSocialDialog.m */,
 				7714EEB811C3EEB00091E1C8 /* DDSocialLoginDialog.h */,
 				7714EEB911C3EEB00091E1C8 /* DDSocialLoginDialog.m */,
-				7714EEBA11C3EEB00091E1C8 /* plurk.png */,
-				7714EEBB11C3EEB00091E1C8 /* plurk@2x.png */,
-				7714EEBC11C3EEB00091E1C8 /* plurkClose.png */,
-				772B1BA511C434A300C4C41F /* plurkClose@2x.png */,
-				7714EEBD11C3EEB00091E1C8 /* twitter.png */,
-				7714EEBE11C3EEB00091E1C8 /* twitter@2x.png */,
-				7714EEBF11C3EEB00091E1C8 /* twitterClose.png */,
-				772B1BA311C4349B00C4C41F /* twitterClose@2x.png */,
 				2860E32A111B888700E27156 /* iPad */,
 				2860E324111B887F00E27156 /* iPhone */,
 				28EEBF621118D79A00187D67 /* Shared */,
@@ -216,16 +192,8 @@
 			files = (
 				2860E329111B887F00E27156 /* MainWindow_iPhone.xib in Resources */,
 				2860E32F111B888700E27156 /* MainWindow_iPad.xib in Resources */,
-				7714EEC211C3EEB00091E1C8 /* plurk.png in Resources */,
-				7714EEC311C3EEB00091E1C8 /* plurk@2x.png in Resources */,
-				7714EEC411C3EEB00091E1C8 /* plurkClose.png in Resources */,
-				7714EEC511C3EEB00091E1C8 /* twitter.png in Resources */,
-				7714EEC611C3EEB00091E1C8 /* twitter@2x.png in Resources */,
-				7714EEC711C3EEB00091E1C8 /* twitterClose.png in Resources */,
 				7714EF1711C3F2BF0091E1C8 /* iPhoneDemoViewController.xib in Resources */,
 				772B1B6611C42F2200C4C41F /* Icon.png in Resources */,
-				772B1BA411C4349B00C4C41F /* twitterClose@2x.png in Resources */,
-				772B1BA611C434A300C4C41F /* plurkClose@2x.png in Resources */,
 				772B1BAC11C4369500C4C41F /* iPadDemoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

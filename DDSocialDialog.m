@@ -87,25 +87,9 @@ static CGFloat kDDSocialDialogPadding = 10;
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		self.contentMode = UIViewContentModeRedraw;
 		
-		// Dialog icons
-		UIImage *iconImage;
-		UIImage *closeImage;
-		
-		if (theme_ == DDSocialDialogThemePlurk) {
-			iconImage = [UIImage imageNamed:@"plurk.png"];
-			closeImage = [UIImage imageNamed:@"plurkClose.png"];			
-		} else {
-			// Default dialog icons are for DDSocialDialogThemeTwitter
-			iconImage = [UIImage imageNamed:@"twitter.png"];
-			closeImage = [UIImage imageNamed:@"twitterClose.png"];			
-		}
-		
-		iconView_ = [[UIImageView alloc] initWithImage:iconImage];
-		[self addSubview:iconView_];
-		
 		UIColor* color = [UIColor colorWithRed:167.0/255 green:184.0/255 blue:216.0/255 alpha:1];
 		closeButton_ = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
-		[closeButton_ setImage:closeImage forState:UIControlStateNormal];
+		[closeButton_ setTitle:@" " forState:UIControlStateNormal];
 		[closeButton_ setTitleColor:color forState:UIControlStateNormal];
 		[closeButton_ setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 		[closeButton_ addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
@@ -146,7 +130,7 @@ static CGFloat kDDSocialDialogPadding = 10;
 	} else {
 		// Default dialog theme colors are for DDSocialDialogThemeTwitter
 		DDSocialDialogTitleBackgroundColor = [UIColor colorWithRed:0.557 green:0.757 blue:0.855 alpha:1.0];
-		DDSocialDialogTitleStrokeColor = [UIColor colorWithRed:0.133 green:0.267 blue:0.4 alpha:1.0];
+		DDSocialDialogTitleStrokeColor = [UIColor colorWithRed:0.233 green:0.367 blue:0.5 alpha:1.0];
 		DDSocialDialogBlackStrokeColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
 		DDSocialDialogBorderColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.3];		
 	}
@@ -165,7 +149,6 @@ static CGFloat kDDSocialDialogPadding = 10;
 - (void)dealloc {
 	
 	dialogDelegate_ = nil;
-	[iconView_ release], iconView_ = nil;
 	[closeButton_ release], closeButton_ = nil;
 	[titleLabel_ release], titleLabel_ = nil;
 	[contentView_ release], contentView_ = nil;
@@ -180,19 +163,13 @@ static CGFloat kDDSocialDialogPadding = 10;
 	[self sizeToFitOrientation:NO];
 	
 	CGFloat innerWidth = self.frame.size.width - (kDDSocialDialogBorderWidth+1)*2;  
-	[iconView_ sizeToFit];
 	[titleLabel_ sizeToFit];
 	[closeButton_ sizeToFit];
 	
-	titleLabel_.frame = CGRectMake(kDDSocialDialogBorderWidth + kDDSocialDialogTitleMarginX + iconView_.frame.size.width + kDDSocialDialogTitleMarginX,
+	titleLabel_.frame = CGRectMake(kDDSocialDialogBorderWidth + kDDSocialDialogTitleMarginX,
 								   kDDSocialDialogBorderWidth,
-								   innerWidth - (titleLabel_.frame.size.height + iconView_.frame.size.width + kDDSocialDialogTitleMarginX*2),
+								   innerWidth - (titleLabel_.frame.size.height + kDDSocialDialogTitleMarginX*2),
 								   titleLabel_.frame.size.height + kDDSocialDialogTitleMarginY*2);
-	
-	iconView_.frame = CGRectMake(kDDSocialDialogBorderWidth + kDDSocialDialogTitleMarginX,
-								 kDDSocialDialogBorderWidth + floor(titleLabel_.frame.size.height/2 - iconView_.frame.size.height/2),
-								 iconView_.frame.size.width,
-								 iconView_.frame.size.height);
 	
 	closeButton_.frame = CGRectMake(self.frame.size.width - (titleLabel_.frame.size.height + kDDSocialDialogBorderWidth),
 									kDDSocialDialogBorderWidth,
