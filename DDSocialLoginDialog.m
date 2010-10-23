@@ -104,12 +104,20 @@
     [super dealloc];
 }
 
+#pragma mark -
+#pragma mark layout
+
+- (void)layoutSubviews {
+	[super layoutSubviews];
+	
+	tableView_.frame = self.contentView.bounds;
+}
+
 - (void)show {
 	
 	// Call super first to setup dialog before adding your stuffs
-	[super show];
-	
-	tableView_.frame = self.contentView.bounds;
+	[super show];	
+	[self setNeedsLayout];
 }
 
 #pragma mark -
