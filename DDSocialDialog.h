@@ -72,6 +72,7 @@ typedef enum{
 @property (nonatomic, assign) id <DDSocialDialogDelegate> dialogDelegate;
 
 - (id)initWithFrame:(CGRect)frame theme:(DDSocialDialogTheme)theme;
+- (void)dismiss:(BOOL)animated;
 - (void)show;
 - (void)cancel;
 @end

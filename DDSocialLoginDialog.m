@@ -212,7 +212,9 @@
 				[delegate_ socialDialogDidSucceed:self];
 			}		
 		}
-	}
+		
+		[self dismiss:YES];
+	}	
 }
 
 #pragma mark -

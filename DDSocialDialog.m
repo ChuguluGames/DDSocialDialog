@@ -50,7 +50,6 @@ static CGFloat kDDSocialDialogTitleMarginY = 4.0;
 static CGFloat kDDSocialDialogPadding = 10;
 
 @interface DDSocialDialog () 
-- (void)dismiss:(BOOL)animated;
 - (void)postDismissCleanup;
 
 - (void)addRoundedRectToPath:(CGContextRef)context rect:(CGRect)rect radius:(float)radius;
