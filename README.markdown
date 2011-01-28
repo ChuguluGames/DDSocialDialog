@@ -2,7 +2,7 @@
 
 DDSocialDialog is a UIView subclass looks like FacebookConnect dialog.
 
-![](http://github.com/digdog/DDSocialDialog/raw/master/Screenshots/DDSocialLoginDialogiPhone.png)
+![](https://github.com/digdog/DDSocialDialog/raw/master/Screenshots/DDSocialLoginDialogiPhone.png)
 
 ## Features
 
@@ -41,13 +41,13 @@ And the DDSocialLoginDialogDelegate will call -socialDialogDidSucceed: when user
 
 ## Screenshots
 
-![](http://github.com/digdog/DDSocialDialog/raw/master/Screenshots/DDSocialDialogiPad.png)
+![](https://github.com/digdog/DDSocialDialog/raw/master/Screenshots/DDSocialDialogiPad.png)
 
 
-![](http://github.com/digdog/DDSocialDialog/raw/master/Screenshots/DDSocialLoginDialogiPad.png)
+![](https://github.com/digdog/DDSocialDialog/raw/master/Screenshots/DDSocialLoginDialogiPad.png)
 
 
-![](http://github.com/digdog/DDSocialDialog/raw/master/Screenshots/DDSocialLoginDialogiPhoneLandscape.png)
+![](https://github.com/digdog/DDSocialDialog/raw/master/Screenshots/DDSocialLoginDialogiPhoneLandscape.png)
 
 ## License
 
