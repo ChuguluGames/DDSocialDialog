@@ -147,7 +147,7 @@ static CGFloat kDDSocialDialogPadding = 10;
 		DDSocialDialogTitleBackgroundColor = [UIColor colorWithRed:0.557 green:0.757 blue:0.855 alpha:1.0];
 		DDSocialDialogTitleStrokeColor = [UIColor colorWithRed:0.233 green:0.367 blue:0.5 alpha:1.0];
 		DDSocialDialogBlackStrokeColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
-		DDSocialDialogBorderColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.3];		
+		DDSocialDialogBorderColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.3];		
 	}
 	
 	CGRect grayRect = CGRectOffset(rect, -0.5, -0.5);
