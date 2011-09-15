@@ -86,10 +86,13 @@ static CGFloat kDDSocialDialogPadding = 10;
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		self.contentMode = UIViewContentModeRedraw;
 		
+        unichar inf = 0x00D7;//0x25FC; // infinity symbol 
+        
+        
 		UIColor* color = [UIColor colorWithRed:167.0/255 green:184.0/255 blue:216.0/255 alpha:1];
 		closeButton_ = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
-		[closeButton_ setTitle:@" " forState:UIControlStateNormal];
-		[closeButton_ setTitleColor:color forState:UIControlStateNormal];
+		[closeButton_ setTitle:[NSString stringWithCharacters:&inf length:1] forState:UIControlStateNormal];
+		[closeButton_ setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		[closeButton_ setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 		[closeButton_ addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
 		closeButton_.titleLabel.font = [UIFont boldSystemFontOfSize:12];
@@ -120,7 +123,7 @@ static CGFloat kDDSocialDialogPadding = 10;
 	UIColor *DDSocialDialogTitleStrokeColor;
 	UIColor *DDSocialDialogBlackStrokeColor;
 	UIColor *DDSocialDialogBorderColor;
-
+    
 	if (theme_ == DDSocialDialogThemePlurk) {
 		DDSocialDialogTitleBackgroundColor = [UIColor colorWithRed:0.953 green:0.49 blue:0.03 alpha:1.0];
 		DDSocialDialogTitleStrokeColor = [UIColor colorWithRed:0.753 green:0.341 blue:0.145 alpha:1.0];
@@ -210,7 +213,7 @@ static CGFloat kDDSocialDialogPadding = 10;
 }
 
 - (void)cancel {
-
+    
 	if ([dialogDelegate_ conformsToProtocol:@protocol(DDSocialDialogDelegate)]) {
 		if ([dialogDelegate_ respondsToSelector:@selector(socialDialogDidCancel:)]) {
 			[dialogDelegate_ socialDialogDidCancel:self];
@@ -395,9 +398,9 @@ static CGFloat kDDSocialDialogPadding = 10;
 		return NO;
 	} else {
 		return orientation == UIDeviceOrientationLandscapeLeft
-			|| orientation == UIDeviceOrientationLandscapeRight
-			|| orientation == UIDeviceOrientationPortrait
-			|| orientation == UIDeviceOrientationPortraitUpsideDown;
+        || orientation == UIDeviceOrientationLandscapeRight
+        || orientation == UIDeviceOrientationPortrait
+        || orientation == UIDeviceOrientationPortraitUpsideDown;
 	}
 }
 
@@ -406,20 +409,23 @@ static CGFloat kDDSocialDialogPadding = 10;
 - (void)deviceOrientationDidChange:(void*)object {
 	
 	UIDeviceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-	
+	//UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+    
 	if ([self shouldRotateToOrientation:orientation]) {
 		if (!showingKeyboard_) {
-			if (UIInterfaceOrientationIsLandscape(orientation)) {
-				contentView_.frame = CGRectMake(kDDSocialDialogBorderWidth + 1,
-												kDDSocialDialogBorderWidth + titleLabel_.frame.size.height,
-												self.frame.size.width - (kDDSocialDialogBorderWidth+1)*2,
-												self.frame.size.height - (titleLabel_.frame.size.height + 1 + kDDSocialDialogBorderWidth*2));
-			} else {
-				contentView_.frame = CGRectMake(kDDSocialDialogBorderWidth + 1,
-												kDDSocialDialogBorderWidth + titleLabel_.frame.size.height,
-												self.frame.size.height - (kDDSocialDialogBorderWidth+1)*2,
-												self.frame.size.width - (titleLabel_.frame.size.height + 1 + kDDSocialDialogBorderWidth*2));
-			}
+            /**<@note: unecessary code*/
+            /**<@todo: remove this block*/
+            //			if (UIInterfaceOrientationIsLandscape(orientation)) {
+            //				contentView_.frame = CGRectMake(kDDSocialDialogBorderWidth + 1,
+            //												kDDSocialDialogBorderWidth + titleLabel_.frame.size.height,
+            //												self.frame.size.width - (kDDSocialDialogBorderWidth+1)*2,
+            //												self.frame.size.height - (titleLabel_.frame.size.height + 1 + kDDSocialDialogBorderWidth*2));
+            //			} else {
+            //				contentView_.frame = CGRectMake(kDDSocialDialogBorderWidth + 1,
+            //												kDDSocialDialogBorderWidth + titleLabel_.frame.size.height,
+            //												self.frame.size.height - (kDDSocialDialogBorderWidth+1)*2,
+            //												self.frame.size.width - (titleLabel_.frame.size.height + 1 + kDDSocialDialogBorderWidth*2));
+            //			}
 		} 
 		
 		CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
@@ -431,15 +437,15 @@ static CGFloat kDDSocialDialogPadding = 10;
 }
 
 - (void)keyboardDidShow:(NSNotification*)notification {
-
+    
 	UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;	
-
+    
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsPortrait(orientation)) {
 		// On the iPad the screen is large enough that we don't need to 
 		// resize the dialog to accomodate the keyboard popping up
 		return;
 	}
-
+    
 	CGSize screenSize = [UIScreen mainScreen].bounds.size;
 	CGSize keyboardSize = [self convertRect:[[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue] toView:nil].size;
 	
@@ -466,7 +472,7 @@ static CGFloat kDDSocialDialogPadding = 10;
 }
 
 - (void)keyboardWillHide:(NSNotification*)notification {
-
+    
 	UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;	
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad && UIInterfaceOrientationIsPortrait(orientation)) {
