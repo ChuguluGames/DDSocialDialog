@@ -55,6 +55,7 @@ typedef enum{
 	DDSocialDialogTheme theme_;
 
 	UIButton *closeButton_;
+    UIImageView *icone_;
 	UILabel *titleLabel_;
 	UIView *contentView_;
 	UIControl *touchInterceptingControl_;
@@ -72,6 +73,7 @@ typedef enum{
 @property (nonatomic, assign) id <DDSocialDialogDelegate> dialogDelegate;
 
 - (id)initWithFrame:(CGRect)frame theme:(DDSocialDialogTheme)theme;
+-(id) initWithFrame:(CGRect)frame andIcone:(UIImage*)image;
 - (void)dismiss:(BOOL)animated;
 - (void)show;
 - (void)cancel;

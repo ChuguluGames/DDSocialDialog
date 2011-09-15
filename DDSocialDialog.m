@@ -88,7 +88,6 @@ static CGFloat kDDSocialDialogPadding = 10;
 		
         unichar inf = 0x00D7;//0x25FC; // infinity symbol 
         
-        
 		UIColor* color = [UIColor colorWithRed:167.0/255 green:184.0/255 blue:216.0/255 alpha:1];
 		closeButton_ = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
 		[closeButton_ setTitle:[NSString stringWithCharacters:&inf length:1] forState:UIControlStateNormal];
@@ -99,7 +98,9 @@ static CGFloat kDDSocialDialogPadding = 10;
 		closeButton_.showsTouchWhenHighlighted = YES;
 		closeButton_.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
 		[self addSubview:closeButton_];
-		
+
+	
+        
 		CGFloat titleLabelFontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 18 : 14;
 		titleLabel_ = [[UILabel alloc] initWithFrame:CGRectZero];
 		titleLabel_.text = NSStringFromClass([self class]);
@@ -116,6 +117,18 @@ static CGFloat kDDSocialDialogPadding = 10;
 		[self addSubview:contentView_];
     }
     return self;
+}
+
+-(id) initWithFrame:(CGRect)frame andIcone:(UIImage*)image {
+    self = [self initWithFrame:frame theme:DDSocialDialogThemeTwitter];
+    if(self){
+    
+        icone_ = [[UIImageView alloc] initWithImage:image];
+        icone_.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
+        [self addSubview:icone_];
+
+    }
+    return self; 
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -152,6 +165,7 @@ static CGFloat kDDSocialDialogPadding = 10;
 	
 	dialogDelegate_ = nil;
 	[closeButton_ release], closeButton_ = nil;
+    [icone_ release], icone_ = nil;
 	[titleLabel_ release], titleLabel_ = nil;
 	[contentView_ release], contentView_ = nil;
 	[touchInterceptingControl_ release], touchInterceptingControl_ = nil;
@@ -167,16 +181,41 @@ static CGFloat kDDSocialDialogPadding = 10;
 	CGFloat innerWidth = self.frame.size.width - (kDDSocialDialogBorderWidth+1)*2;  
 	[titleLabel_ sizeToFit];
 	[closeButton_ sizeToFit];
-	
-	titleLabel_.frame = CGRectMake(kDDSocialDialogBorderWidth + kDDSocialDialogTitleMarginX,
-								   kDDSocialDialogBorderWidth,
-								   innerWidth - (titleLabel_.frame.size.height + kDDSocialDialogTitleMarginX*2),
-								   titleLabel_.frame.size.height + kDDSocialDialogTitleMarginY*2);
-	
-	closeButton_.frame = CGRectMake(self.frame.size.width - (titleLabel_.frame.size.height + kDDSocialDialogBorderWidth),
-									kDDSocialDialogBorderWidth,
-									titleLabel_.frame.size.height,
-									titleLabel_.frame.size.height);
+
+    
+    if(icone_){
+    	[icone_ sizeToFit];
+        [icone_ setCenter:CGPointMake(kDDSocialDialogBorderWidth + kDDSocialDialogTitleMarginX +icone_.frame.size.width / 2,
+                                  kDDSocialDialogBorderWidth + (kDDSocialDialogBorderWidth + icone_.frame.size.height) /2)];
+
+        closeButton_.frame = CGRectMake(self.frame.size.width - (kDDSocialDialogBorderWidth+1)*2,
+                                        icone_.frame.origin.y,
+                                        closeButton_.frame.size.width,
+                                        closeButton_.frame.size.height);
+        
+        titleLabel_.frame = CGRectMake(icone_.frame.origin.x + icone_.frame.size.width + kDDSocialDialogTitleMarginX,
+                                       kDDSocialDialogBorderWidth,
+                                       innerWidth - closeButton_.frame.size.width  - icone_.frame.size.width - (kDDSocialDialogBorderWidth+1)*2,								   titleLabel_.frame.size.height + kDDSocialDialogTitleMarginY*2);
+        
+
+	}else{
+    
+        titleLabel_.frame = CGRectMake(kDDSocialDialogBorderWidth + kDDSocialDialogTitleMarginX,
+                                       kDDSocialDialogBorderWidth,
+                                       innerWidth - (titleLabel_.frame.size.height + kDDSocialDialogTitleMarginX*2),
+                                       titleLabel_.frame.size.height + kDDSocialDialogTitleMarginY*2);
+        
+        closeButton_.frame = CGRectMake(self.frame.size.width - (titleLabel_.frame.size.height + kDDSocialDialogBorderWidth),
+                                        kDDSocialDialogBorderWidth,
+                                        titleLabel_.frame.size.height,
+                                        titleLabel_.frame.size.height);
+        
+        contentView_.frame = CGRectMake(kDDSocialDialogBorderWidth+1,
+                                        kDDSocialDialogBorderWidth + titleLabel_.frame.size.height,
+                                        innerWidth,
+                                        self.frame.size.height - (titleLabel_.frame.size.height + 1 + kDDSocialDialogBorderWidth*2));
+
+    }
 	
 	contentView_.frame = CGRectMake(kDDSocialDialogBorderWidth+1,
 									kDDSocialDialogBorderWidth + titleLabel_.frame.size.height,
