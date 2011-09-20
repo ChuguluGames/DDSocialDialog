@@ -88,13 +88,14 @@ static CGFloat kDDSocialDialogPadding = 10;
 		
         unichar inf = 0x00D7;//0x25FC; // infinity symbol 
         
-		UIColor* color = [UIColor colorWithRed:167.0/255 green:184.0/255 blue:216.0/255 alpha:1];
+		//UIColor* color = [UIColor colorWithRed:167.0/255 green:184.0/255 blue:216.0/255 alpha:1];
 		closeButton_ = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
 		[closeButton_ setTitle:[NSString stringWithCharacters:&inf length:1] forState:UIControlStateNormal];
 		[closeButton_ setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		[closeButton_ setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 		[closeButton_ addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
-		closeButton_.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+        //[closeButton_ setBackgroundColor:[UIColor blackColor]];
+        closeButton_.titleLabel.font = [UIFont boldSystemFontOfSize:12];
 		closeButton_.showsTouchWhenHighlighted = YES;
 		closeButton_.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
 		[self addSubview:closeButton_];
@@ -188,10 +189,10 @@ static CGFloat kDDSocialDialogPadding = 10;
         [icone_ setCenter:CGPointMake(kDDSocialDialogBorderWidth + kDDSocialDialogTitleMarginX +icone_.frame.size.width / 2,
                                   kDDSocialDialogBorderWidth + (kDDSocialDialogBorderWidth + icone_.frame.size.height) /2)];
 
-        closeButton_.frame = CGRectMake(self.frame.size.width - (kDDSocialDialogBorderWidth+1)*2,
+        closeButton_.frame = CGRectMake(self.frame.size.width - (kDDSocialDialogBorderWidth+1)*2 - 10,
                                         icone_.frame.origin.y,
-                                        closeButton_.frame.size.width,
-                                        closeButton_.frame.size.height);
+                                        20,
+                                        20);
         
         titleLabel_.frame = CGRectMake(icone_.frame.origin.x + icone_.frame.size.width + kDDSocialDialogTitleMarginX,
                                        kDDSocialDialogBorderWidth,
@@ -204,7 +205,7 @@ static CGFloat kDDSocialDialogPadding = 10;
                                        kDDSocialDialogBorderWidth,
                                        innerWidth - (titleLabel_.frame.size.height + kDDSocialDialogTitleMarginX*2),
                                        titleLabel_.frame.size.height + kDDSocialDialogTitleMarginY*2);
-        
+    
         closeButton_.frame = CGRectMake(self.frame.size.width - (titleLabel_.frame.size.height + kDDSocialDialogBorderWidth),
                                         kDDSocialDialogBorderWidth,
                                         titleLabel_.frame.size.height,
